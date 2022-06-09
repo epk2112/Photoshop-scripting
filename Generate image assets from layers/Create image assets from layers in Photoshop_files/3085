@@ -1,0 +1,45 @@
+var addToDom = function(element, content) {
+    if (document.body) {
+        document.body.appendChild(element);
+        if (content !== undefined) {
+            element.contentWindow.document.open('text/html');
+            element.contentWindow.document.write(content);
+            element.contentWindow.document.close();
+        }
+    } else if (window.addEventListener) {
+        window.addEventListener("load", function() {
+            document.body.appendChild(element);
+            if (content !== undefined) {
+                element.contentWindow.document.open('text/html');
+                element.contentWindow.document.write(content);
+                element.contentWindow.document.close();
+            }
+        }, false);
+    } else {
+        window.attachEvent("onload", function() {
+            document.body.appendChild(element);
+            if (content !== undefined) {
+                element.contentWindow.document.open('text/html');
+                element.contentWindow.document.write(content);
+                element.contentWindow.document.close();
+            }
+        });
+    }
+}
+var crm_prefix = "https://googleads.g.doubleclick.net/pagead/viewthroughconversion/";
+var conv_id_list = [990712356, 1033657903, 864947348, 1017040472, 704255822, 1044228596, 1036652121, 1055007256, 1055615794, 622305021, 606143638, 1047257100, 992162373, 1039146555, 997144843, 990900628, 1067912547, 951224271, 1034324169, 981158066, 1041700610, 1061355802, 1035558107];
+var crm_infix = "?userId=";
+var hashedId = "2f58f8e4cd4f42754c056e6d12443423efa69502bf0222b08976c98c80db99d6";
+var crm_suffix = "&guid=ON&script=0"
+if (conv_id_list !== undefined && conv_id_list.length !== 0) {
+    for (var i = 0; i < conv_id_list.length; i++) {
+        var crm_conv_id = conv_id_list[i];
+        var url = crm_prefix + crm_conv_id + crm_infix + hashedId + crm_suffix + "&rand=" + Math.random() ;
+        var imgElem = document.createElement('img');
+        imgElem.height=1;
+        imgElem.width=1;
+        imgElem.style.display = 'none';
+        imgElem.src = url;
+        addToDom(imgElem);
+    }
+}

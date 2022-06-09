@@ -1,0 +1,34 @@
+ScriptingListener plug-in
+The ScriptingListener plug-in can record JavaScript to a log file for any operation which is actionable.
+
+Install the ScriptingListener plug-in:
+
+1. Quit Photoshop.
+
+2. Download the ScriptingListener plug-in package:
+
+macOS:
+
+Photoshop 2020: Scripting Listener Plug-in for macOS
+Photoshop 2019 and earlier: Scripting Listener Plug-in for macOS
+Windows:
+
+Scripting Listener Plug-in for Windows
+Note: This package contains the ScriptingListener plug-in in the "Utilities" folder, scripting documentation, and sample scripts.
+
+3. After you download the ScriptingListener plug-in package file above, double-click it to decompress it. If asked, extract all the files.
+
+4. After you unzip the package, you will see three folders:
+
+Documents
+Sample Scripts
+Utilities
+Copy the Utilities folders to the Photoshop plug-ins folder:
+
+macOS:
+
+Applications\Adobe Photoshop [Photoshop_version]\Plug-ins\
+Windows:
+
+Program Files\Adobe\Adobe Photoshop [Photoshop_version]\
+ 
